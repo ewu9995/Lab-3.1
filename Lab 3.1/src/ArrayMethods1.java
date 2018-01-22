@@ -2,6 +2,7 @@ import java.util.Arrays;
 
 public class ArrayMethods1 {
 	
+	//Testing code
 	public static void main(String[] args) {
 		int[] test1 = {1,4,4,5,2,4,3,17,0};
 		double[] test2 = {1.1,4.1,5.0,2.0,4.0,3.0,17.0,0.0};
@@ -28,16 +29,13 @@ public class ArrayMethods1 {
 		System.out.println("Test3 took: " + time + " nanoseconds");
 		System.out.println(Arrays.toString(test3));
 	
-	
-	
 	}
 		
 	
-	
-	
+	//Insertion Sort
 	public static void insertionSort(int [] list1) {
 		for(int i = 0; i < list1.length-1; i++) {
-			int swap1 =0;
+			int swap1 = 0;
 			boolean swap2 = swap1 > list1[i];
 			if(list1[i] < list1[i+1]) {
 				swap(list1, i, i+1);
@@ -49,29 +47,26 @@ public class ArrayMethods1 {
 		}
 	}
 	
-	
+	//Selection Sort
 	public static void selectionSort(double [] list1) {
-		
 		for(int i = 0; i < list1.length-1; i++) {
-			int min = 0;
-			if(list1[i] < list1[min]) {
-				selectionSwap(list1,  min, i);
-				min = i;
-			}
-		
-			if(min > list1[i]) {
-				selectionSwap(list1,  min, i);
-				min = i;
+			int min = i;
+			for (int j =0; j < list1.length-i -1; j++)
+				if(list1[j] < list1[min]) {
+				selectionSwap(list1,  min, j);
+				min = (int) list1[j];
 			}
 		}
 	}
 	
 	
+	//Bubble Sort
 	public static void bubbleSort(String [] list1) {
 		
 		for(int i = 0; i < list1.length-1; i++) {
-				if(list1[i].compareTo(list1[i+1])>0) {
-					bubbleSwap(list1, i, i+1);
+			for(int j =0; j <list1.length-i-1; j++ )	
+			if(list1[j].compareTo(list1[j+1])>0) {
+					bubbleSwap(list1, j, j+1);
 				}
 			}
 	}
