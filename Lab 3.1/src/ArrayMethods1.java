@@ -49,19 +49,19 @@ public class ArrayMethods1 {
 
 	//Selection Sort
 	public static void selectionSort(double [] list1) {
-	int min = 1;
-		while(min > 0) { 
+	int min = -1;
+		while (min>-1) {
 		for(int i = 0; i < list1.length-1; i++) {
-			 min =i;
-			for (int j = 0; j < list1.length-i-1; j++) {
-				if(list1[j] < list1[i]) {
-				selectionSwap(list1,  i, j);
-				min = (int) list1[j];
+			 min = i;
+			for (int j = 0; j < list1.length-1; j++) {
+				if(list1[j] < min) {
+				selectionSwap(list1,  min, j);
+				min = j;
 				}
-			}
+		}
+		}
 		}
 	}
-}
 	
 	
 	//Bubble Sort
@@ -72,7 +72,7 @@ public class ArrayMethods1 {
 			if(list1[j].compareTo(list1[j+1])>0) {
 					bubbleSwap(list1, j, j+1);
 				}
-			}
+				}
 		}
 	}
 			
@@ -97,7 +97,7 @@ public class ArrayMethods1 {
 		arr[index2] = temp;
 	}
 }
-
+	
 
 
 
