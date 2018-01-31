@@ -66,14 +66,12 @@ public class ArrayMethods1 {
 	//Selection Sort 
 	public static void selectionSort(double [] list1) 
 	{	
-		int x = 0;
-		while(x>0) {
 		for(int i = 0; i < list1.length-1; i++)
 		{
 			int min = i;
 			double pos = list1[i];
 	
-			for (int j = i+1; j < list1.length; j++) 
+			for (int j = i+1; j < list1.length-1; j++) 
 			{
 				if(list1[j] < pos)
 				{ 
@@ -83,39 +81,29 @@ public class ArrayMethods1 {
 			}
 				selectionSwap(list1,  min, i);
 			}
-			}
 		}
 
-		/* self note
-		 * 
-		 * while loop is running
-		 * first value loop = min value
-		 * min gets cycled through loop
-		 * if min is greater than a number min swaps
-		 * new number becomes min
-		 * 
-		 */
+		
 		
 			
 	
 	
 	//Bubble Sort
 	//loops through to find a number that is less than and swaps; greater number checks again
+	//stops when everything is sorted
 	public static void bubbleSort(String [] list1) {
-		
+	boolean swap = true;
+	while(swap) {
+		swap=false;
 		for(int i = 0; i < list1.length-1; i++) {
-			for(int j =0; j <list1.length-i-1; j++)	{
-			if(list1[j].compareTo(list1[j+1])>0) {
-					bubbleSwap(list1, j, j+1);
+			if(list1[i].compareTo(list1[i+1])>0) {
+					bubbleSwap(list1, i, i+1);
+					swap = true;
 				}
 				}
 		}
 	}
-		/*bubble sort example for use
-		 * first loop:
-		 *  3|2|1  --> 2|3|1 --> 2|1|3
-		 */
-		
+	
 	
 	
 	public static void swap(int []arr, int index1, int index2) {
