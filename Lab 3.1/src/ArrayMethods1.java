@@ -42,7 +42,9 @@ public class ArrayMethods1 {
 	public static void insertionSort(int [] list1) {
 		for(int i = 0; i < list1.length-1; i++) { //outer loop looking for an array smaller than the initial array
 		//i is the value being sorted up the array
-			for(int j= i+1 ; j  >0 ; j--) { //j is the right value , j-1 is i
+			for(int j= i+1 ; j  > 0 ; j--) { //j is the right value , j-1 is i
+				//j counts down
+				//j cant be less than or equal to zero as negative numbers return error
 				if(list1[j] < list1[j-1]) { //if right value is less than value being sorted, they swap
 					swap(list1,  j, j-1);
 					}
@@ -54,9 +56,8 @@ public class ArrayMethods1 {
 	//right value gets sorted down; it goes towards the left until it reaches correct position
 
 
-	
 	//video used to understand how insertion sort works: https://www.youtube.com/watch?v=lCDZ0IprFw4
-
+	//reference/parts of code derived from: http://www.java2novice.com/java-sorting-algorithms/insertion-sort/
 	
 	
 	/*
@@ -76,6 +77,7 @@ public class ArrayMethods1 {
 
 
 
+	
 	//Selection Sort 
 	public static void selectionSort(double [] list1) 
 	{	
@@ -97,8 +99,7 @@ public class ArrayMethods1 {
 				selectionSwap(list1,  min, i); //min(j) is swapped with i
 			}
 		}
-
-		
+	
 	//video used as a guide: https://www.youtube.com/watch?v=cqh8nQwuKNE
 	
 			
