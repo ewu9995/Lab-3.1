@@ -1,5 +1,11 @@
 import java.util.Arrays;
 
+/*
+ * Evan Wu
+ * Period 2 AP CSA
+ * Lab 3.1
+ * 
+ */
 public class ArrayMethods1 {
 	
 	//Testing code
@@ -33,16 +39,21 @@ public class ArrayMethods1 {
 		
 	
 	//Insertion Sort
-	//
 	public static void insertionSort(int [] list1) {
-		for(int i = list1.length; i < list1.length-1; i++) {
-			for (int j = i; j >=0; j--) {
-				if(list1[j-1]>list1[i]) {
-				swap(list1, j, j-1  );
-			}
+		for(int i = 0; i < list1.length-1; i++) {	
+		//i is the value being sorted up the array
+			for(int j= i+1 ; j  >0 ; j--) { //j is the right value , j-1 is i
+				if(list1[j] < list1[j-1]) { //if right value is less than value being sorted, they swap
+					swap(list1,  j, j-1);
+					}
 			}
 		}
-	}
+		}
+	//all items to left is smaller
+	//when value right < value being sorted
+	//right value gets sorted down
+	
+	
 	
 	
 	
