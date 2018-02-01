@@ -39,6 +39,7 @@ public class ArrayMethods1 {
 		
 	
 	//Insertion Sort
+	//values gets sorted to their positions
 	public static void insertionSort(int [] list1) {
 		for(int i = 0; i < list1.length-1; i++) { //outer loop looking for an array smaller than the initial array
 		//i is the value being sorted up the array
@@ -48,8 +49,8 @@ public class ArrayMethods1 {
 				if(list1[j] < list1[j-1]) { //if right value is less than value being sorted, they swap
 					swap(list1,  j, j-1);
 					}
+				}
 			}
-		}
 		}
 	//all items to left is smaller
 	//when value right < value being sorted
@@ -79,34 +80,32 @@ public class ArrayMethods1 {
 
 	
 	//Selection Sort 
+	//Minimum value checks to see if its the smallest
 	public static void selectionSort(double [] list1) 
 	{	
-		for(int i = 0; i < list1.length; i++) //loop that finds the first value
+		for(int i = 0; i < list1.length-1; i++) //loop that finds the first value
 		{
 			//first value it finds becomes the minimum value
 			int min = i;
-			double pos = list1[i];
-			
 			for (int j = i+1; j < list1.length; j++) //loops through all values that come after i; j is value designation
 			{
-				if(list1[j] < pos) //compares values after i with j
+				if(list1[j] < list1[min]) //compares values (j) after i 
 				{ 
-				//if j is less than current min, which is i, j becomes the new min
+				//if a value j is less than current min, which is i, j becomes the new min and cycle begins again
 				min = j;  
-				pos = list1[j];
 				}
 			}
 				selectionSwap(list1,  min, i); //min(j) is swapped with i
 			}
 		}
 	
-	//video used as a guide: https://www.youtube.com/watch?v=cqh8nQwuKNE
-	
+	//video used to understand how selection sort works: https://www.youtube.com/watch?v=cqh8nQwuKNE
+	//code derived from: https://www.geeksforgeeks.org/selection-sort/
 			
 	
 	
 	//Bubble Sort
-	//loops through to find a number that is less than and swaps; greater number checks again
+	//loops through to find a value that is less than and swaps; value on right checks again until array ends
 	//stops when everything is sorted
 	public static void bubbleSort(String [] list1) {
 	boolean swap = true;
@@ -115,16 +114,15 @@ public class ArrayMethods1 {
 		for(int i = 0; i < list1.length-1; i++) { //loops through the loop; first value becomes current value i
 			if(list1[i].compareTo(list1[i+1])>0) { // if the value to the right of a value is less than the current value
 					bubbleSwap(list1, i, i+1);     // the values swap
-					swap = true; //swap is counted
+					swap = true; //swap is true, so cycle repeats until everything is sorted
 				}
-				}
+			}
 		}
 	}
 	
+	//video used to understand how bubble sort works: https://www.youtube.com/watch?v=F13_wsHDIG4
 	
-	//video used as guide: https://www.youtube.com/watch?v=F13_wsHDIG4
-	
-	//swap methods
+	//swapping methods
 	public static void swap(int []arr, int index1, int index2) {
 		int temp = arr[index1];
 		arr[index1] = arr[index2];
